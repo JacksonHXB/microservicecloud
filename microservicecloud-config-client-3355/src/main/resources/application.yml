@@ -1,0 +1,4 @@
+# 这里的配置可有可无
+spring:
+    application:
+        name: microservicecloud-config-client
