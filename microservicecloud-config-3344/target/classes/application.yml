@@ -12,4 +12,5 @@ spring:
         config:
             server:
                 git:
-                    uri: git@github.com:JacksonHXB/microservicecloud-config.git   # github上面的springcloud的配置仓库
+                    uri: git@github.com:JacksonHXB/economy-config.git   # github上面的springcloud的配置仓库
+                    
