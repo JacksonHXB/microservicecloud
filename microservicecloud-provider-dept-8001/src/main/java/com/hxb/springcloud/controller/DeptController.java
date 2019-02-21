@@ -24,19 +24,10 @@ public class DeptController {
 	@Autowired
 	private DiscoveryClient client;
 	
-	@RequestMapping(value="/dept/add",method=RequestMethod.POST)
-	public boolean add(@RequestBody Dept dept){
-		return service.addDept(dept);
-	}
 	
 	@RequestMapping(value="/dept/get/{id}", method=RequestMethod.GET)
 	public Dept get(@PathVariable("id") Long id){
 		return service.get(id);
-	}
-	
-	@RequestMapping(value="/dept/list", method=RequestMethod.GET)
-	public List<Dept> list(){
-		return service.list();
 	}
 	
 	/*服务的发现*/

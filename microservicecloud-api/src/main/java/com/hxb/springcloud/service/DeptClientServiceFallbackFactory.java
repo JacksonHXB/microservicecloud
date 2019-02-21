@@ -23,18 +23,6 @@ public class DeptClientServiceFallbackFactory implements FallbackFactory<DeptCli
 			public Dept get(Long id) {
 				return new Dept().setDeptno(id).setDname("该ID:"+id+"客户端服务已经降级").setDb_source("MySQL中没有这样的数据库");
 			}
-
-			@Override
-			public List<Dept> list() {
-				List<Dept> arrList = new ArrayList<Dept>();
-				return arrList;
-			}
-
-			@Override
-			public boolean add(Dept dept) {
-				// TODO Auto-generated method stub
-				return false;
-			}
 			
 		};
 	}

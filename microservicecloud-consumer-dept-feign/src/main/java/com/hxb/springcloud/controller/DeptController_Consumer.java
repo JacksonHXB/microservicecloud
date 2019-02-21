@@ -21,16 +21,6 @@ public class DeptController_Consumer {
 	public Dept get(@PathVariable("id") Long id){
 		return service.get(id);
 	};
-	
-	@RequestMapping(value="/consumer/dept/list")
-	public List<Dept> list(){
-		return service.list();
-	};
-	
-	@RequestMapping(value="/consumer/dept/add")
-	public boolean add(@RequestBody Dept dept){
-		return service.add(dept);
-	};
 }
 
 
