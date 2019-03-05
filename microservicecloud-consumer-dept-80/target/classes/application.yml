@@ -1,7 +1,7 @@
 server:
     port: 80
 
-# Ribbon配置
+# Ribbon配置，负载均衡将消费者注册到eureka
 eureka:
     client:
         register-with-eureka: false

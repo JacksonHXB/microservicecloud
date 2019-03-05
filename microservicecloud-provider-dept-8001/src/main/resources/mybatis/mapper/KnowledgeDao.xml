@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hxb.springcloud.dao.KnowledgeDao">
+	<!--  
+	<resultMap type="com.hxb.springcloud.entity.Knowledge" id="knowledgeMap">
+		<id property="id" column="students_id"/>
+		<result property="name" column="students_name"/>
+		<result property="sal" column="students_sal"/>
+	</resultMap>
+	-->
+	
+	<!-- 插入知识 -->
+	<insert id="insertKnowledge" parameterType="Knowledge" >
+		<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		INSERT INTO tb_knowledge(title,content,keyword,time,websites)values(#{title},#{content},#{keyword},#{time, jdbcType=TIMESTAMP},#{websites})
+    </insert>
+	
+	<!-- 删除知识库 -->
+	<delete id="deleteKnowledge" parameterType="java.lang.Integer">
+		DELETE FROM tb_knowledge WHERE id=#{id}
+	</delete>
+	
+	<!-- 更新用户 -->
+	<update id="updateKnowledge" parameterType="Knowledge">
+		UPDATE tb_knowledge SET title=#{title}, content=#{content}, keyword=#{keyword},websites=#{websites} WHERE id=#{id}
+	</update>
+	
+	<!-- 查询知识库 -->
+	<select id="queryAllKnowledge" resultType="Knowledge">
+		SELECT * FROM tb_knowledge
+		<if test="key != null">
+			WHERE keyword LIKE CONCAT('%',#{key},'%')
+		</if>
+		<if test="sort != null">
+			ORDER BY ${sort} ASC	<!-- 根据某个字段排序，这里是使用$而不是# -->
+		</if>
+		<if test="size!= 0">
+			LIMIT #{page}, #{size}
+		</if>
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,11 +4,15 @@ package com.hxb.springcloud.entites;
 import com.hxb.springcloud.utils.RespCode;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 
 @Getter
 @Setter
+@ToString
+@NoArgsConstructor
 public class RespEntity {
 	private int code;
 	private String msg;
