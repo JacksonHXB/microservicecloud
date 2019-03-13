@@ -18,7 +18,7 @@ import com.hxb.springcloud.utils.RespCode;
 
 @Service
 public class KnowledgeServiceImpl implements KnowledgeService{
-
+	
 	@Autowired
 	KnowledgeDao knowledgeDao;
 
@@ -89,31 +89,5 @@ public class KnowledgeServiceImpl implements KnowledgeService{
 			return new RespEntity(RespCode.SUCCESS, "更新失败！");
 		}
 	}
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

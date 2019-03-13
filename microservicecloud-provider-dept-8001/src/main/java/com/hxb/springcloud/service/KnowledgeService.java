@@ -1,6 +1,5 @@
 package com.hxb.springcloud.service;
 
-
 import com.hxb.springcloud.entites.Knowledge;
 import com.hxb.springcloud.entites.RespEntity;
 
@@ -14,6 +13,4 @@ public interface KnowledgeService {
 	
 	/*添加或者是更新知识*/
 	public RespEntity addOrUpdate(Knowledge knowledge);
-
-	
 }

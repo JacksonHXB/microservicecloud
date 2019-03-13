@@ -1,6 +1,5 @@
 package com.hxb.springcloud.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hxb.springcloud.entites.Knowledge;
 import com.hxb.springcloud.entites.RespEntity;
 import com.hxb.springcloud.service.KnowledgeService;
+
 
 @RestController
 public class KnowledgeController {
@@ -35,7 +35,6 @@ public class KnowledgeController {
 		return result;
 	}
 	
-	
 	/*查询知识
 	 * page: 当前页数
 	 * size: 显示条数
@@ -48,8 +47,8 @@ public class KnowledgeController {
 		return result;
 	}
 	
-	
 }
+
 
 
 
