@@ -35,19 +35,19 @@ public class KnowledgeServiceImpl implements KnowledgeService{
 	
 	/*搜索知识*/
 	@Override
-	public RespEntity getKnowledges(String key, String page, String size, String sort) {
+	public RespEntity getKnowledges(String page, String size, String sort, String keywords) {
 		List<Knowledge> knowledgeList = new ArrayList<Knowledge>();
 		int start = 0;
 		int size2 = 0;
-		if(key != null) { //模糊查询
+		if(keywords != null) { //模糊查询
 			if(size!=null && page!=null) {
 				start = Integer.parseInt(page)*Integer.parseInt(size);
 				size2 = Integer.parseInt(size);
 				//当传递的参数包含page和size时，则使用limit
-				 knowledgeList = knowledgeDao.queryAllKnowledge(key, start, size2, sort);
+				 knowledgeList = knowledgeDao.queryAllKnowledge(keywords, start, size2, sort);
 			}else {
 				//当传递的参数size=0时，则时查询全部
-				knowledgeList = knowledgeDao.queryAllKnowledge(key, 0, 0, sort);
+				knowledgeList = knowledgeDao.queryAllKnowledge(keywords, 0, 0, sort);
 			}
 		}else { //查询所有
 			if(size!=null && page!=null) {

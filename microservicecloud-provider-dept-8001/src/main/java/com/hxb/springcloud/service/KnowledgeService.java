@@ -9,7 +9,7 @@ public interface KnowledgeService {
 	public RespEntity delKnowledge(String id);
 	
 	/*搜索知识*/
-	public RespEntity getKnowledges(String key, String page, String size, String sort);
+	public RespEntity getKnowledges(String page, String size, String sort, String keywords);
 	
 	/*添加或者是更新知识*/
 	public RespEntity addOrUpdate(Knowledge knowledge);

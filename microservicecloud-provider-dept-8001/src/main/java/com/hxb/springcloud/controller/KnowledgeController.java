@@ -42,8 +42,12 @@ public class KnowledgeController {
 	 * key: 搜索的关键字(传递则表示模糊查询，不传递表示普通查询)
 	 * */
 	@GetMapping("/knowledge/search/{page}")
-	public RespEntity getKnowledges(@PathVariable("page")String page, String size, String sort, String keyword) {
-		RespEntity result = knowledgeService.getKnowledges(keyword, page, size, sort);
+	public RespEntity getKnowledges(
+			@PathVariable("page")String page, 
+			String size, 
+			String sort, 
+			String keywords) {
+		RespEntity result = knowledgeService.getKnowledges(page, size , sort, keywords);
 		return result;
 	}
 	
