@@ -16,8 +16,8 @@ import com.hxb.springcloud.entites.RespEntity;
 public interface KnowledgeClientService {
 	
 	/*删除知识*/
-	@RequestMapping(value="/knowledge/del/{id}", method=RequestMethod.DELETE)
-	public RespEntity delKnowledge(String id);
+	@RequestMapping(value="/knowledge/del/{id}", method=RequestMethod.GET)
+	public RespEntity delKnowledge(@PathVariable(value="id", required=true)String id);
 	
 	/*查询知识
 	 * page: 当前页数

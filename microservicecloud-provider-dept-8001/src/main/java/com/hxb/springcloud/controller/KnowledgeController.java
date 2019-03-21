@@ -1,7 +1,6 @@
 package com.hxb.springcloud.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,8 +28,9 @@ public class KnowledgeController {
 	}
 	
 	/*删除知识*/
-	@DeleteMapping("/knowledge/del/{id}")
+	@GetMapping("/knowledge/del/{id}")
 	public RespEntity delKnowledge(@PathVariable("id")String id) {
+		System.out.println(id);
 		RespEntity result = knowledgeService.delKnowledge(id);
 		return result;
 	}

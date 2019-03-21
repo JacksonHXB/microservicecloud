@@ -20,8 +20,9 @@ public class KnowledgeController_Consumer {
 	private KnowledgeClientService knowledgeClientService;		//通过公共的知识库服务，对Fegin接口进行查询
 	
 	/*删除知识*/
-	@RequestMapping(value="/consumer/knowledge/del/{id}", method=RequestMethod.DELETE)
-	public RespEntity delKnowledge(@RequestParam("id") String id) {
+	@RequestMapping(value="/consumer/knowledge/del/{id}", method=RequestMethod.GET)
+	public RespEntity delKnowledge(@PathVariable(value="id", required=true) String id) {
+		System.out.println(id);
 		RespEntity result = knowledgeClientService.delKnowledge(id);
 		return result;
 	}
