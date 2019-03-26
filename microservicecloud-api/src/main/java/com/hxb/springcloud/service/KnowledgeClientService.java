@@ -37,7 +37,7 @@ public interface KnowledgeClientService {
 	/*添加或更新知识
 	 * id: 传递，表示更新，不传递，表示添加
 	 * */
-	@PutMapping("/knowledge/addOrUpdate")
+	@RequestMapping(value="/knowledge/addOrUpdate", method=RequestMethod.POST)
 	public RespEntity addOrUpdate(Knowledge knowledge);
 }
 

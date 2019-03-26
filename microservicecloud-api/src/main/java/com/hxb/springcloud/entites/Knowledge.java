@@ -17,8 +17,7 @@ public class Knowledge {
 	private Integer id;
 	private String title;
 	private String content;
-	private String keyword;
-	
+	private String keywords;
 	@JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")  //时间格式化
 	private Date time;
 	private String websites;

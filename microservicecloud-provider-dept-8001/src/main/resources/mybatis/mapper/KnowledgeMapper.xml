@@ -16,7 +16,7 @@
 		<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
 			SELECT LAST_INSERT_ID()
 		</selectKey>
-		INSERT INTO tb_knowledge(title,content,keyword,time,websites)values(#{title},#{content},#{keyword},#{time, jdbcType=TIMESTAMP},#{websites})
+		INSERT INTO tb_knowledge(title,content,keywords,time,websites)values(#{title},#{content},#{keywords},#{time, jdbcType=TIMESTAMP},#{websites})
     </insert>
 	
 	<!-- 删除知识库 -->
@@ -26,14 +26,14 @@
 	
 	<!-- 更新用户 -->
 	<update id="updateKnowledge" parameterType="Knowledge">
-		UPDATE tb_knowledge SET title=#{title}, content=#{content}, keyword=#{keyword},websites=#{websites} WHERE id=#{id}
+		UPDATE tb_knowledge SET title=#{title}, content=#{content}, keywords=#{keywords},websites=#{websites} WHERE id=#{id}
 	</update>
 	
 	<!-- 查询知识库 -->
 	<select id="queryAllKnowledge" resultType="Knowledge">
 		SELECT * FROM tb_knowledge
 		<if test="key != null">
-			WHERE keyword LIKE CONCAT('%',#{key},'%')
+			WHERE keywords LIKE CONCAT('%',#{key},'%')
 		</if>
 		<if test="sort != null">
 			ORDER BY ${sort} ASC	<!-- 根据某个字段排序，这里是使用$而不是# -->
