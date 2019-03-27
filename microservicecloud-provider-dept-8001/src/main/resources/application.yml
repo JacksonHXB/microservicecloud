@@ -6,7 +6,14 @@ mybatis:
     type-aliases-package: com.hxb.springcloud.entites    # 所有Entity别名类别配置
     mapper-locations: 
     - classpath:mybatis/mapper/**/*.xml                  # mapper映射文件
-    
+
+# 打印sql
+logging:
+  level:
+     com.sinoprof.system.group.dao : debug
+# 或者如下所示调整打印输出级别，默认是info,其中com.sioprof下存放代码（web，service，dao层......代码，可以整个项目都打印sql，避免重复配置） 
+
+
 spring:
     application:
         name: microservicecloud-economy                     # 应用的名称，也是也是微服务的名称

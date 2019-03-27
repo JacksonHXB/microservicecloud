@@ -1,66 +1,39 @@
 package com.hxb.springcloud.service.impl;
 
-import java.util.ArrayList;
-
-import javax.annotation.Resource;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hxb.springcloud.dao.DictDao;
+import com.hxb.springcloud.dao.DictItemDao;
+import com.hxb.springcloud.entites.DictItem;
+import com.hxb.springcloud.entites.Dictionary;
 import com.hxb.springcloud.entites.RespEntity;
 import com.hxb.springcloud.service.DictService;
-import com.hxb.springcloud.utils.RespCode;
+
 
 @Service
-public class DictServiceImpl implements DictService {
-
+public class DictServiceImpl implements DictService{
+	
 	@Autowired
-	DictDao dictDao;
+	private DictDao dictDao;
 	
-	@Resource 
-//	private RedisTemplate redisTemplate;
-	
+	@Autowired
+	private DictItemDao dictItemDao;
+
+
 	@Override
-	public RespEntity findAllDicts() {
-//		redisTemplate.boundValueOps("name").set("itcast");
-//		String str = (String) redisTemplate.boundValueOps("name").get();
-//		System.out.println(str);
-//
-//		List<DictItem> dictItemList = dictDao.getDictItems();
-		return new RespEntity(RespCode.SUCCESS, new ArrayList());
+	public RespEntity findDictDetail(Integer dictId) {
+		List<DictItem> dictItemList = dictItemDao.queryDictItems(dictId);
+		System.out.println(dictItemList);
+		return null;
 	}
 
+	@Override
+	public RespEntity getDictWithDictItem(Integer id) {
+		Dictionary dict = dictDao.queryDictWithItems(id);
+		System.out.println(dict);
+		return null;
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

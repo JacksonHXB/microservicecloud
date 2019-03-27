@@ -14,7 +14,6 @@ import lombok.ToString;
 @NoArgsConstructor
 public class DictItem {
 	private Integer id;
-	private Integer dict_id;
 	private String name;
 	private String value;
 	private Date update_time;

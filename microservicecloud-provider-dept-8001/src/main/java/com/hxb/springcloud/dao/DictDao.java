@@ -1,15 +1,14 @@
 package com.hxb.springcloud.dao;
 
-import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.hxb.springcloud.entites.DictItem;
-
+import com.hxb.springcloud.entites.Dictionary;
 
 @Mapper
 public interface DictDao {
 
-	public List<DictItem> getDictItems();
-
+	public Dictionary queryDictWithItems(Integer id);
+	
+	
 }

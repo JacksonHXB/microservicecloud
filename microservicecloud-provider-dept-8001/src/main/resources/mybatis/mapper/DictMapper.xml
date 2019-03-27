@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hxb.springcloud.dao.DictDao">
+	<resultMap type="com.hxb.springcloud.entites.Dictionary" id="DictResult"><!-- 返回字典分类携带字典详情 -->
+		<result property="id" column="id"/>
+		<result property="code" column="code"/>
+		<result property="name" column="name"/>
+		<collection property="dictItems" ofType="com.hxb.springcloud.entites.DictItem">
+			<!-- 定义这个集合中元素的封装规则 -->
+			<id column="dict_id" property="id"/>
+			<result column="name" property="name"/>
+			<result column="value" property="value"/>
+		</collection>
+		
+	</resultMap>
+	<!-- 根据字典ID，查找该字典及详情 -->
+	<select id="queryDictWithItems" parameterType="Integer" resultMap="DictResult">
+		SELECT * FROM tb_dict WHERE id=#{id}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

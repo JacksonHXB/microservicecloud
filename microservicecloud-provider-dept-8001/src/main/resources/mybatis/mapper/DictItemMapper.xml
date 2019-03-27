@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hxb.springcloud.dao.DictItemDao">
+	<!-- 根据字典分类ID，查询关联的字典详情 -->
+	<select id="queryDictItems" resultType="com.hxb.springcloud.entites.DictItem" parameterType="Integer">
+		SELECT * FROM tb_dict_item where dict_id=#{id}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
