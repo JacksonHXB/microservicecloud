@@ -28,6 +28,18 @@ spring:
             initial-size: 5              # 初始化连接数
             max-total: 5                 # 最大连接数
             max-wait-millis: 200         # 等待链接获取的最大超时时间
+    redis:
+         database: 0                    # 数据库索引
+         host: 172.31.19.222
+         port: 6379
+         password: 
+         pool:
+             max-active: 8              # 连接池的最大连接数
+             max-wait: -1               # 连接池最大阻塞等待事件（负数表示没有限制）
+             max-idle: 8                # 最大空闲连接
+             min-idle: 0                # 最小空闲连接
+         timeout: 0                     # 设置超时时间(毫秒)
+    
 
 eureka:
     client: # 将客户端注册到eureka服务列表中
@@ -46,6 +58,8 @@ info:
     company.name: www.hxb.com
     build.artifactId: $project.artifactId$
     build.version: $project.version$
+    
+
 
 
 
