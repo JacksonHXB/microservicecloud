@@ -22,16 +22,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * @author szekinwin
  *
  */
-@Configuration
-@EnableCaching
+//@Configuration
+//@EnableCaching
 public class RedisConfig extends CachingConfigurerSupport{
 
-    @Value("${spring.redis.host}")
-    private String host;
-    @Value("${spring.redis.port}")
-    private int port;
-    @Value("${spring.redis.timeout}")
-    private int timeout;
+//    @Value("${spring.redis.host}")
+//    private String host;
+//    @Value("${spring.redis.port}")
+//    private int port;
+//    @Value("${spring.redis.timeout}")
+//    private int timeout;
     
     //自定义缓存key生成策略
 //    @Bean
@@ -50,14 +50,14 @@ public class RedisConfig extends CachingConfigurerSupport{
 //        };
 //    }
     //缓存管理器
-    @Bean 
+//    @Bean 
     public CacheManager cacheManager(@SuppressWarnings("rawtypes") RedisTemplate redisTemplate) {
         RedisCacheManager cacheManager = new RedisCacheManager(redisTemplate);
         //设置缓存过期时间 
         cacheManager.setDefaultExpiration(10000);
         return cacheManager;
     }
-    @Bean
+//    @Bean
     public RedisTemplate<String, String> redisTemplate(RedisConnectionFactory factory){
         StringRedisTemplate template = new StringRedisTemplate(factory);
         setSerializer(template);//设置序列化工具

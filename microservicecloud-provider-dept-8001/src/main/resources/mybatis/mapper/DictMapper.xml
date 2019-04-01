@@ -6,6 +6,7 @@
 	<resultMap type="com.hxb.springcloud.entites.Dictionary" id="DictResult"><!-- 返回字典分类携带字典详情 -->
 		<result property="id" column="id"/>
 		<result property="code" column="code"/>
+		<result property="name" column="name"></result>
 		<collection property="dictItems" ofType="com.hxb.springcloud.entites.DictItem">
 			<id property="id" column="i_id"></id>
 			<result property="name" column="i_name"></result>
@@ -14,12 +15,15 @@
 	</resultMap>
 	<!-- 根据字典ID，查找该字典及详情 -->
 	<select id="queryDictWithItems" parameterType="Integer" resultMap="DictResult">
-		SELECT i.id as i_id, i.name as i_name, i.value as i_value, d.code  FROM tb_dict d LEFT JOIN tb_dict_item i ON d.id=i.dict_id WHERE d.id=#{id};
+		SELECT d.id, d.code, d.name, i.id as i_id, i.name as i_name, i.value as i_value
+		FROM tb_dict d LEFT JOIN tb_dict_item i ON d.id=i.dict_id 
+		WHERE d.id=#{id};
 	</select>
 	
 	<!-- 查询所有字典及该字典详情 -->
 	<select id="queryDictsWithItems" resultMap="DictResult">
-		SELECT i.id as i_id, i.name as i_name, i.value as i_value, d.code  FROM tb_dict d LEFT JOIN tb_dict_item i ON d.id=i.dict_id
+		SELECT d.id, d.code, d.name, i.id as i_id, i.name as i_name, i.value as i_value
+		FROM tb_dict d LEFT JOIN tb_dict_item i ON d.id=i.dict_id
 	</select>
 </mapper>
 

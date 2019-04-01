@@ -11,6 +11,7 @@ import com.hxb.springcloud.entites.DictItem;
 import com.hxb.springcloud.entites.Dictionary;
 import com.hxb.springcloud.entites.RespEntity;
 import com.hxb.springcloud.service.DictService;
+import com.hxb.springcloud.utils.RespCode;
 
 
 @Service
@@ -36,4 +37,38 @@ public class DictServiceImpl implements DictService{
 		System.out.println(dict);
 		return null;
 	}
+
+	@Override
+	public RespEntity getDictsWithItems() {
+		List<Dictionary> dictList = dictDao.queryDictsWithItems();
+		return new RespEntity(RespCode.SUCCESS, dictList);
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

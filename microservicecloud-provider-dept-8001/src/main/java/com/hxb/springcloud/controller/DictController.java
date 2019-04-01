@@ -26,6 +26,11 @@ public class DictController {
 		return dictService.findDictDetail(1);
 	}
 	
+	@GetMapping("/dict/dictItems")
+	public RespEntity getDictsWithDictItems() {
+		return dictService.getDictsWithItems();
+	}
+	
 }
 
 

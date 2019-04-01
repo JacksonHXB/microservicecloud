@@ -6,4 +6,6 @@ public interface DictService {
 	public RespEntity getDictWithDictItem(Integer id);			//获取字典类型并携带字典详情
 	
 	public RespEntity findDictDetail(Integer dictId);		//根据字典类型ID获取字典详情
+	
+	public RespEntity getDictsWithItems();					//获取所有的数据字典及详情
 }
